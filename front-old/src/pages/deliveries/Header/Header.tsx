@@ -10,18 +10,18 @@ export const Header: FC = () => {
             <button className="tab active">
               <span className="date">Monday, August 23</span>
             </button>
-            <button className="tab active">
-              <span className="date">Monday, August 23</span>
+            <button className="tab">
+              <span className="date">Wednesday, August 23</span>
             </button>
-            <button className="tab active">
-              <span className="date">Monday, August 23</span>
+            <button className="tab">
+              <span className="date">Thursday, August 23</span>
             </button>
           </div>
         </div>
         <button
           className="btn-primary btn-buy"
           data-test-id="header-cta"
-          onClick={() => alert('Confirmed')}>
+          onClick={() => alert('Reschedule')}>
           Confirm
         </button>
       </div>

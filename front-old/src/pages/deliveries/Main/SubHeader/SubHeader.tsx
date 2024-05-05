@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import cart from '../../../../assets/cart.svg';
+import cart from '../../../../../../cookUnity/src/assets/cart.svg';
 import './SubHeader.scss';
 
 export const SubHeader: FC = () => {
@@ -10,7 +10,7 @@ export const SubHeader: FC = () => {
         <button
           className="btn-primary cta"
           data-test-id="subheader-cta"
-          onClick={() => alert('Confirmed')}>
+          onClick={() => alert('Reschedule')}>
           <div className="cart-counter">
             <img src={cart} />
             <span data-test-id="cart-counter">2</span>
