@@ -1,0 +1,39 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Date {
+  id       Int           @id @default(autoincrement())
+  name     String @unique
+  value    String
+  products DateProduct[]
+}
+
+model Product {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  title     String
+  content   String?
+  price     Int
+  imgUrl    String   @default("https://cookunity-media.imgix.net/media/catalog/product/cache/x1200/l/a/large-chicken_schnitzel_-_ratel.jpeg")
+
+  dates DateProduct[]
+}
+
+model DateProduct {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  date    Date    @relation(fields: [dateId], references: [id])
+  product Product @relation(fields: [productId], references: [id])
+
+  dateId    Int
+  productId Int
+}

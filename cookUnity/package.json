@@ -1,0 +1,42 @@
+{
+  "name": "front",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "tests": "cypress open",
+    "migration": "npx prisma migrate dev --name init",
+    "seed": "npx prisma db seed"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.3.0",
+    "@mui/icons-material": "^5.15.16",
+    "@mui/material": "^5.15.15",
+    "@prisma/client": "^5.13.0",
+    "next": "14.2.3",
+    "next-usequerystate": "1.13.2",
+    "prettier": "^3.2.5",
+    "react": "^18",
+    "react-dom": "^18",
+    "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.8",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "cypress": "^13.8.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3",
+    "prisma": "^5.13.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  },
+  "prisma": {
+    "seed": "ts-node ./src/services/prisma/seed.ts",
+    "schema": "./src/services/prisma/schema.prisma"
+  }
+}
