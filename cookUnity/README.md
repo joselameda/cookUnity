@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# CookUnity FullStack Challenge
 
-## Getting Started
+Welcome to the CookUnity FullStack challenge! This application is built with Next.js version 14, and for component management, MUI is used.
 
-First, run the development server:
+This application manages the API service with Prisma and SQLite, storing necessary information for its functionality and longevity.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Quick Start
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+To get started with the application, follow these steps:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Install Packages:** Open your terminal and run `npm i` inside the `cookUnity` folder.
+2. **Run Migrations:** In the same terminal, execute `npm run migration`. This command will run Prisma migrations to create the local database provided by SQLite.
+3. **Run Seeds:** In the terminal, run `npm run seed`. This will populate the database with necessary information to start using it.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+**Note:** If you wish to view the tables and data of the created database, you need to use a database viewer and select the SQLite driver. Then, select the database file located at `src/services/prisma/dev.db`.
 
-## Learn More
+4. **Run the Application:** To launch the application, simply execute `npm run dev` for development mode (with auto-refresh) or `npm run start` to build and obtain the production version.
 
-To learn more about Next.js, take a look at the following resources:
+**Additional Note:** If you want to run Cypress tests, in a other terminal use the command `npm run tests`. This will open an additional module on your screen where you can select the browser for running the tests. Follow the provided instructions to complete the test execution.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+![CookUnityChallengeTestsPassed.png](cypress%2Fscreenshots%2FCookUnityChallengeTestsPassed.png)
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### **Tests Error:**
+Check you have running the server local, localhost:3000, the test needs the local server is running. 
