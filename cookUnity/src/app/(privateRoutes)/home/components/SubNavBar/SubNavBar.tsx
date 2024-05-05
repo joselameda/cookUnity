@@ -10,23 +10,22 @@ interface SubNavBarProps {
 }
 
 export const SubNavBar: FC<SubNavBarProps> = ({ title, button }) => (
-  <Box
-    component="nav"
-    sx={styles.principalBox}
-    alignContent={'center'}
-    padding={(theme) => `0px ${theme.spacing(2)}`}
-    height="56px">
+  <Box component="nav" sx={styles.principalBox} alignContent={'center'}>
     <Box
       display="flex"
       justifyContent="space-between"
       width="100%"
       alignItems="center">
-      <Typography data-test-id={'subheader-title'}>{title}</Typography>
-      <Box>{button}</Box>
+      <Typography sx={styles.title} data-test-id={'subheader-title'}>
+        {title}
+      </Typography>
+      <Box sx={styles.button}>{button}</Box>
     </Box>
   </Box>
 );
 
 const styles = {
-  principalBox: { backgroundColor: 'grey' },
+  principalBox: { backgroundColor: '#eeeeee', padding: '8px 10px', height: 56 },
+  title: { fontSize: '30px', fontWeight: 'bold' },
+  button: { padding: '8px 10px' }
 };

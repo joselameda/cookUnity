@@ -29,7 +29,9 @@ export const CookUnityButton: React.FC<CookUnityButtonProps> = ({
       sx={styles.button}
       startIcon={startIcon}>
       {orderNumber && (
-        <span data-test-id={'cart-counter'}>{`${orderNumber}`}</span>
+        <span
+          style={styles.number}
+          data-test-id={'cart-counter'}>{`${orderNumber}`}</span>
       )}
       <span>{label}</span>
     </Button>
@@ -44,4 +46,5 @@ const styles = {
     borderRadius: '5px',
     height: 'min-content',
   },
+  number: { paddingRight: '5px' },
 };

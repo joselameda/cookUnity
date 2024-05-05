@@ -12,6 +12,7 @@ import {
   configPage,
   defaultConfig,
 } from '@/app/(privateRoutes)/home/homeConfig.ts';
+import { Box } from '@mui/material';
 
 interface HomeProps {
   products: Product[];
@@ -56,15 +57,21 @@ export const Home: FC<HomeProps> = ({
           />
         }
       />
-      {products?.map((product, index) => (
-        <ProductCard
-          key={index}
-          title={product.title}
-          price={product.price}
-          description={product.content || ''}
-          imgUrl={product.imgUrl}
-        />
-      ))}
+      <Box
+        display="flex"
+        flexWrap="wrap"
+        justifyContent="flex-start"
+        alignContent="flex-start">
+        {products?.map((product, index) => (
+          <ProductCard
+            key={index}
+            title={product.title}
+            price={product.price}
+            description={product.content || ''}
+            imgUrl={product.imgUrl}
+          />
+        ))}
+      </Box>
     </>
   );
 };

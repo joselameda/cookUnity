@@ -14,7 +14,7 @@ export default async function PrivateLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className={"rootBody"}>
         <AppProvider>{children}</AppProvider>
       </body>
     </html>

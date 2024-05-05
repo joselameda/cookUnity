@@ -30,6 +30,7 @@ export const NavBar: FC<NavBarProps> = ({ muiButtonChild, cookUnityDates }) => {
       <Tabs
         onChange={handleChange}
         value={activeTab}
+        TabIndicatorProps={styles.tabIndicator}
         classes={{ flexContainer: 'tabs MuiTabs-flexContainer' }}
         sx={styles.tabs}>
         {cookUnityDates.map(({ id, name, value }) => (
@@ -38,14 +39,14 @@ export const NavBar: FC<NavBarProps> = ({ muiButtonChild, cookUnityDates }) => {
       </Tabs>
       <Box>{muiButtonChild}</Box>
     </Box>
-  );
+  )
 };
 
 const styles = {
   nav: {
     backgroundColor: 'black',
     paddingX: 2,
-    height: 56,
+    height: 80,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -53,10 +54,18 @@ const styles = {
   tabs: {
     color: 'white',
   },
+  tabIndicator: {
+    style: {
+      backgroundColor: 'gold',
+    },
+  },
   tab: {
     color: 'white',
     fontSize: '1.3rem',
     minWidth: 200,
     paddingX: 2,
+    '&.Mui-selected, &.Mui-selected:hover': {
+      color: 'white',
+    },
   },
 };

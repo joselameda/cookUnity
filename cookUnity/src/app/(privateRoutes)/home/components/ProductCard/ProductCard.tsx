@@ -17,16 +17,16 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   return (
     <Card sx={styles.card} data-test-id="product-card">
       <CardContent>
-        <Typography variant="body1" color="text.primary">
+        <Typography variant="h6" color="text.primary">
           {title}
         </Typography>
         <Typography variant="body1" color="text.primary">
           {`$${price}`}
         </Typography>
       </CardContent>
-      <CardMedia component="img" height="194" image={imgUrl} alt={title} />
+      <CardMedia component="img" image={imgUrl} alt={title} />
       <CardContent>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body1" color="text.secondary">
           {description}
         </Typography>
       </CardContent>
@@ -35,5 +35,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 };
 
 const styles = {
-  card: { maxWidth: 345 },
+  card: {
+    maxWidth: 400,
+    margin: '10px',
+    padding: '20px',
+    boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
+  },
 };
